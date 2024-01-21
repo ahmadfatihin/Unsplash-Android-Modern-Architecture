@@ -1,14 +1,14 @@
 package com.example.unsplashappsjetpack.entity
 
-sealed class Result {
-    object Loading : Result()
+sealed class NetworkResult {
+    data object Loading : NetworkResult()
     data class Photo(
         var id: String = "",
         var urls: Url = Url(),
         var user: User = User(),
         var color: String = "",
         var tags: List<Tag> = emptyList()
-    ) : Result() {
+    ) : NetworkResult() {
 
         data class Url(
             var raw: String = "",
